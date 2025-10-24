@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #10b981;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-white font-semibold shadow hover:bg-primary-dark transition;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100;
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_API_BASE": "${NEXT_PUBLIC_API_BASE}",
+    "NEXT_PUBLIC_LOGO_TEXT": "${NEXT_PUBLIC_LOGO_TEXT}",
+    "NEXT_PUBLIC_CONTACT_EMAIL": "${NEXT_PUBLIC_CONTACT_EMAIL}",
+    "NEXT_PUBLIC_SOCIAL_TW": "${NEXT_PUBLIC_SOCIAL_TW}",
+    "NEXT_PUBLIC_SOCIAL_LI": "${NEXT_PUBLIC_SOCIAL_LI}"
+  }
+}

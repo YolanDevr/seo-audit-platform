@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: seo-audit-backend
+    env: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_NAME
+        value: SEO Audit API
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:////data/audit.db
+      - key: FILES_DIR
+        value: /data/files
+      - key: BASE_URL
+        fromService:
+          name: seo-audit-backend
+          type: web
+          property: url
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: STRIPE_CHECKOUT_URL
+        sync: false
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
